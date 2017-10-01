@@ -7,8 +7,9 @@ to AMQ 6 xPaaS Images.
 
 The following customizations will be applied
 1. create destinations on startup
-  - all mqtt topics
-2. RBAC for the topics created previously
+
+2. RBAC for destinations
+
 3. Loading a customized plugin to intercept the addConnection and addConsumer usecases
 
 
@@ -17,12 +18,12 @@ The following customizations will be applied
 - Changes to `activemq.xml` is to be loaded into a file `openshift-activemq.xml` and
 placed into a folder call `configuration`
 
-- scripts in .s2i/bin
+- `assemble` script in .s2i/bin
 
 - Additional jar files to be placed in a `lib` folder
 
 - Destinations to be created during startup are specified in the 
-`<destinations>` section.
+`<destinations>` section in openshift-activemq.xml.
 
     <destinations>
         <topic physicalName="demo.finance.job" />
