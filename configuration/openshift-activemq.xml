@@ -39,6 +39,12 @@
 
         <!-- ##### DESTINATIONS ##### -->
 
+        <destinations>
+            <topic physicalName="demo.finance.job" />
+            <topic physicalName="demo.it.request" />
+            <topic physicalName="demo.hr.newhire" />
+        </destinations>
+
         <destinationPolicy>
             <policyMap>
                 <policyEntries>
@@ -118,6 +124,19 @@
             <!-- ##### AUTHENTICATION ##### -->
 	    <bean id="customAuthenticationPlugin" class="com.demo.amqplugins.CustomAuthenticationPlugin" xmlns="http://www.springframework.org/schema/beans">
     	    </bean>
+            <authorizationPlugin>
+                <map>
+                    <authorizationMap>
+                        <authorizationEntries>
+                            <authorizationEntry topic=">" write="admin" read="admin" admin="admin" />
+                            <authorizationEntry topic="demo.finance.>" write="finance" read="operation,finance" admin="admin" />
+                            <authorizationEntry topic="demo.hr.>" write="hr" read="operation,hr" admin="admin" />
+                            <authorizationEntry topic="demo.it.>" write="it" read="operation,it" admin="admin" />
+                            <authorizationEntry topic="ActiveMQ.Advisory.>" read="users" write="users" admin="users"/>
+                        </authorizationEntries>
+                    </authorizationMap>
+                </map>
+            </authorizationPlugin>
         </plugins>
 
         <!--
