@@ -240,6 +240,7 @@
                         "serviceAccountName": "amq-service-account",
                         "serviceAccountName": "amq-service-account",
                         "serviceAccountName": "amq-service-account",
+                        "serviceAccountName": "amq-service-account",
                         "containers": [
                             {
                                 "name": "${APPLICATION_NAME}-amq",
