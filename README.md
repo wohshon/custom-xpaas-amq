@@ -14,8 +14,10 @@ The following customizations will be applied
 
 #### 2. Configuring activemq.xml and other properties
 
-- Changes to `activemq.xml` is to be loaded into a file call `openshift-activemq.xml` and
+- Changes to `activemq.xml` is to be loaded into a file `openshift-activemq.xml` and
 placed into a folder call `configuration`
+
+- scripts in .s2i/bin
 
 - Additional jar files to be placed in a `lib` folder
 
@@ -50,7 +52,7 @@ This file will be placed `configuration`
     superUser=password
 
 Changes to `groups.properties` can be pushed in via the same file
-This file will be placed `configuration`
+This file will be placed in `configuration`
 
     #
     # This file contains the roles for users who can log into JBoss A-MQ.
@@ -124,7 +126,13 @@ custom-xpaas-amq   172.30.1.1:5000/custom-amq/custom-xpaas-amq   latest    41 mi
 
   `$ oc create -f ./amq63-basic.json`
   
-  
+ 
+- Create Service Account
+
+  `$ echo '{"kind": "ServiceAccount", "apiVersion": "v1", "metadata": {"name": "amq-service-account"}}' | oc create -f -`
+	
+  `$ oc policy add-role-to-user view system:serviceaccount:custom-amq:amq-service-account`
+ 
 #### Deploy new template, update deploymentConfig with the correct imageStreamTag, and deploy
 
 ```
@@ -179,3 +187,5 @@ Custom plugin intercepts and print out subscriber info
     INFO | ROLES: hr
     INFO | ROLES: users
 
+
+reference: https://access.redhat.com/solutions/2963501
