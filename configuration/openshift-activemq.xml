@@ -40,10 +40,10 @@
         <!-- ##### DESTINATIONS ##### -->
 
         <destinations>
-            <topic physicalName="sensor.temperature.1" />
-            <topic physicalName="sensor.humidity.1" />
-            <topic physicalName="sensor.psi.1" />
-            <topic physicalName="sensor.psi.2" />
+            <topic physicalName="sensor/temperature/1" />
+            <topic physicalName="sensor/humidity/1" />
+            <topic physicalName="sensor/psi/1" />
+            <topic physicalName="sensor/psi/2" />
         </destinations>
 
         <destinationPolicy>
@@ -130,10 +130,10 @@
                     <authorizationMap>
                         <authorizationEntries>
                             <authorizationEntry topic=">" write="admin" read="admin" admin="admin" />
-                            <authorizationEntry topic="sensor.>" write="admin" read="operation,admin" admin="admin" />
-                            <authorizationEntry topic="sensor.humidity.>" write="admin" read="operation,app2" admin="admin" />
-                            <authorizationEntry topic="sensor.temperature.>" write="admin" read="operation,app3" admin="admin" />
-                            <authorizationEntry topic="sensor.psi.>" write="admin" read="operation,app3" admin="admin" />
+                            <authorizationEntry topic="sensor/>" write="admin" read="operation,admin" admin="admin" />
+                            <authorizationEntry topic="sensor/humidity/>" write="admin" read="operation,app2" admin="admin" />
+                            <authorizationEntry topic="sensor/temperature/>" write="admin" read="operation,app3" admin="admin" />
+                            <authorizationEntry topic="sensor/psi/>" write="admin" read="operation,app3" admin="admin" />
                             <authorizationEntry topic="ActiveMQ.Advisory.>" read="users" write="users" admin="users"/>
                         </authorizationEntries>
                     </authorizationMap>
