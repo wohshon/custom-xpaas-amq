@@ -120,6 +120,7 @@
 
         <plugins>
             <!-- ##### AUTHENTICATION ##### -->
+            <jaasAuthenticationPlugin configuration="LdapConfiguration" />
 	    <bean id="customAuthenticationPlugin" class="com.demo.amqplugins.CustomAuthenticationPlugin" xmlns="http://www.springframework.org/schema/beans">
     	    </bean>
 <authorizationPlugin>
