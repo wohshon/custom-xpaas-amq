@@ -41,12 +41,6 @@
 
         <destinations>
             <topic physicalName="SENSOR.TEMPERATURE.DATA" />
-<!--
-            <topic physicalName="sensor/temperature/1" />
-            <topic physicalName="sensor/humidity/1" />
-            <topic physicalName="sensor/psi/1" />
-            <topic physicalName="sensor/psi/2" />
--->
         </destinations>
 
         <destinationPolicy>
@@ -137,7 +131,7 @@
             queueSearchBase="ou=Queue,ou=Destination,ou=messaging,ou=groups,dc=demo,dc=com"
             topicSearchBase="ou=Topic,ou=Destination,ou=messaging,ou=groups,dc=demo,dc=com"
             tempSearchBase="ou=Temp,ou=Destination,ou=messaging,ou=groups,dc=demo,dc=com"
-            refreshInterval="30000"
+            refreshInterval="10000"
             legacyGroupMapping="false"
         />
     </map>
