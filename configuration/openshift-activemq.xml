@@ -40,7 +40,7 @@
         <!-- ##### DESTINATIONS ##### -->
 
         <destinations>
-            <topic physicalName="SENSOR.TEMPERATURE" />
+            <topic physicalName="SENSOR.TEMPERATURE.DATA" />
             <topic physicalName="sensor/temperature/1" />
             <topic physicalName="sensor/humidity/1" />
             <topic physicalName="sensor/psi/1" />
