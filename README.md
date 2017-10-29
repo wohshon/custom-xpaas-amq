@@ -1,4 +1,4 @@
-## Customizing xPaaS AMQ 6
+## Customizing xPaaS AMQ 6 - LDAP INTEGRATION (check configuration folder)
 
 #### 1. Overview
 
