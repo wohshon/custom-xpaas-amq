@@ -38,13 +38,13 @@
     <broker xmlns="http://activemq.apache.org/schema/core" brokerName="${HOSTNAME}" dataDirectory="${activemq.data}">
 
         <!-- ##### DESTINATIONS ##### -->
-
+<!--
         <destinations>
             <topic physicalName="demo.finance.job" />
             <topic physicalName="demo.it.request" />
             <topic physicalName="demo.hr.newhire" />
         </destinations>
-
+-->
         <destinationPolicy>
             <policyMap>
                 <policyEntries>
@@ -122,6 +122,18 @@
 
         <plugins>
             <!-- ##### AUTHENTICATION ##### -->
+            <jaasAuthenticationPlugin configuration="activemq" />
+            <bean id="customBrokerPlugin" class="com.demo.amqplugins.CustomBrokerPlugin" xmlns="http://www.springframework.org/schema/beans"/>
+      <authorizationPlugin>
+        <map>
+          <bean id="customAuthorizationMap" class="com.demo.amqplugins.login.CustomAuthorizationMap"
+                xmlns="http://www.springframework.org/schema/beans">
+	</bean>
+       </map>
+      </authorizationPlugin>
+
+
+<!--
 	    <bean id="customAuthenticationPlugin" class="com.demo.amqplugins.CustomAuthenticationPlugin" xmlns="http://www.springframework.org/schema/beans">
     	    </bean>
             <authorizationPlugin>
@@ -137,6 +149,7 @@
                     </authorizationMap>
                 </map>
             </authorizationPlugin>
+-->
         </plugins>
 
         <!--
